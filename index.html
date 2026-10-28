@@ -10,9 +10,12 @@
   .side { padding: 14px 16px; }
   .side > .sub:last-child { display: none; }
   .brand { font-size: 20px; }
+  .side { overflow: hidden; }
+  .main, .panel, .card { min-width: 0; }
+  body { overflow-x: hidden; }
   .sub { margin-bottom: 12px; }
-  .nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; max-height: 220px; overflow-x: hidden; overflow-y: auto; }
-  .navbtn { min-width: 0; width: 100%; margin: 0; padding: 10px; font-size: 13px; line-height: 1.35; overflow-wrap: anywhere; }
+  .nav { display: flex; flex-wrap: nowrap; gap: 8px; max-height: none; overflow-x: auto; overflow-y: hidden; padding: 5px 0 10px; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
+  .navbtn { flex: 0 0 148px; min-width: 148px; width: 148px; min-height: 82px; margin: 0; padding: 12px; font-size: 13px; line-height: 1.35; white-space: normal; overflow-wrap: anywhere; }
   .navbtn small { font-size: 11px; }
   .main { width: 100%; max-width: 100%; margin: 0; padding: 18px 16px; }
   .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -22,10 +25,15 @@
   .grid { grid-template-columns: minmax(0, 1fr); }
   .eyebrow { letter-spacing: 0.07em; }
   .panel, .card { padding: 16px; }
-  .editor { min-height: 290px; }
+  .editor { min-height: 290px; font-size: 12px; }
+  .workspace { display: grid; grid-template-columns: minmax(0,1fr); }
+  .tabs { flex-wrap: nowrap; overflow-x: auto; }
+  .tab { flex: 0 0 auto; }
   .preview { height: 320px; }
 }
 </style></head><body>
 <div class="app"><aside class="side"><div class="brand">⌘ Aula de Programación</div><p class="sub">3.º año · Prof. Vanina Cabrera</p><nav class="nav" id="nav" aria-label="Unidades"></nav><p class="sub" style="margin-top:22px">Proyecto independiente de NTICx.<br>Versión local, sin cuentas ni servidor.</p></aside>
 <main class="main"><div class="top"><span class="eyebrow">Programación y Diseño Web · Ciclo lectivo 2027</span><span class="pill">4 horas semanales</span></div><div id="content"></div><p class="foot">Los avances se guardan únicamente en este navegador. Para registrar alumnos y notas en línea será necesaria una base de datos independiente y autenticación.</p></main></div>
-<script><script src="app.js"></script></body></html>
+<script src="app.js"></script>
+</body>
+</html>
