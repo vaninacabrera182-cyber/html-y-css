@@ -3,9 +3,29 @@
 <title>Aula de Programación y Diseño Web · 3.º Año</title>
 <style>
 :root{font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;color:#e8ecfa;background:#0c1224}*{box-sizing:border-box}body{margin:0}button,textarea,input{font:inherit}button{cursor:pointer}.app{display:grid;grid-template-columns:260px minmax(0,1fr);min-height:100vh}.side{background:#111a32;border-right:1px solid #263451;padding:24px 16px}.brand{font-weight:850;font-size:20px;line-height:1.3;margin:0 6px 6px}.sub{color:#9eb0d1;font-size:12px;margin:0 6px 24px}.navbtn{width:100%;text-align:left;padding:12px;border:1px solid transparent;background:transparent;color:#c7d3ed;border-radius:10px;margin:3px 0}.navbtn:hover,.navbtn.active{background:#23335b;border-color:#415887;color:#fff}.navbtn small{display:block;color:#9eb0d1;margin-top:4px}.main{padding:32px;max-width:1250px;width:100%;margin:auto}.top{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}.eyebrow{color:#a5b9ed;text-transform:uppercase;font-size:12px;letter-spacing:.13em;font-weight:700}h1{font-size:clamp(27px,4vw,42px);margin:8px 0}h2{font-size:22px;margin:10px 0}h3{font-size:17px}.muted{color:#a9b9d7;line-height:1.65}.pill{border:1px solid #45577e;border-radius:99px;padding:8px 12px;color:#d8e3ff;font-size:12px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:24px 0}.card,.panel{background:#16223d;border:1px solid #2b3c60;border-radius:17px;padding:20px}.card{cursor:pointer;transition:.2s}.card:hover{border-color:#8faaff;transform:translateY(-2px)}.card .num{color:#92acff;font-size:12px;font-weight:800}.card h3{margin:9px 0}.progress{height:9px;background:#30405d;border-radius:99px;overflow:hidden;margin:12px 0}.progress span{display:block;background:linear-gradient(90deg,#7b9aff,#65dbc6);height:100%}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0}.tab,.btn{border:1px solid #41577e;border-radius:10px;padding:10px 14px;background:#23365e;color:white}.tab.active,.btn.primary{background:#7d9cff;color:#09152d;border-color:#7d9cff;font-weight:800}.lesson{border-left:3px solid #7e9fff;padding:3px 0 3px 16px;margin:24px 0}.lesson p{line-height:1.75;color:#d1dcf2}.workspace{display:grid;grid-template-columns:1fr 1fr;gap:12px}.editor{width:100%;min-height:390px;resize:vertical;background:#090e1c;color:#b5f5dc;border:1px solid #344b76;border-radius:12px;padding:16px;font:13px/1.55 Consolas,monospace;tab-size:2}.preview{width:100%;height:390px;background:white;border:0;border-radius:12px}.hint{color:#ffdc99;font-size:13px}.question{padding:18px 0;border-bottom:1px solid #32415f}.question label{display:block;margin:10px 0;padding:9px 12px;border:1px solid #35496e;border-radius:9px;cursor:pointer}.question input{accent-color:#8ba8ff}.result{padding:15px;background:#243f4c;border-radius:10px;margin-top:18px}.hidden{display:none}.foot{color:#93a6c8;font-size:12px;margin-top:40px}.tag{display:inline-block;background:#273a64;border-radius:6px;padding:4px 8px;color:#bfd0ff;font-size:12px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}textarea:focus,button:focus-visible,input:focus-visible{outline:2px solid #92afff;outline-offset:2px}@media(max-width:900px){.app{grid-template-columns:1fr}.side{border-right:0;border-bottom:1px solid #2b3c60;padding:16px}.nav{display:flex;overflow:auto;gap:5px}.navbtn{min-width:170px}.main{padding:20px}.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.grid,.workspace{grid-template-columns:1fr}.main{padding:15px}}
+
+/* Diseño optimizado para celulares y tabletas */
+@media (max-width: 900px) {
+  .app { display: block; min-height: 100vh; }
+  .side { padding: 14px 16px; }
+  .side > .sub:last-child { display: none; }
+  .brand { font-size: 20px; }
+  .sub { margin-bottom: 12px; }
+  .nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; max-height: 220px; overflow-x: hidden; overflow-y: auto; }
+  .navbtn { min-width: 0; width: 100%; margin: 0; padding: 10px; font-size: 13px; line-height: 1.35; overflow-wrap: anywhere; }
+  .navbtn small { font-size: 11px; }
+  .main { width: 100%; max-width: 100%; margin: 0; padding: 18px 16px; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .workspace { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 620px) {
+  .grid { grid-template-columns: minmax(0, 1fr); }
+  .eyebrow { letter-spacing: 0.07em; }
+  .panel, .card { padding: 16px; }
+  .editor { min-height: 290px; }
+  .preview { height: 320px; }
+}
 </style></head><body>
 <div class="app"><aside class="side"><div class="brand">⌘ Aula de Programación</div><p class="sub">3.º año · Prof. Vanina Cabrera</p><nav class="nav" id="nav" aria-label="Unidades"></nav><p class="sub" style="margin-top:22px">Proyecto independiente de NTICx.<br>Versión local, sin cuentas ni servidor.</p></aside>
 <main class="main"><div class="top"><span class="eyebrow">Programación y Diseño Web · Ciclo lectivo 2027</span><span class="pill">4 horas semanales</span></div><div id="content"></div><p class="foot">Los avances se guardan únicamente en este navegador. Para registrar alumnos y notas en línea será necesaria una base de datos independiente y autenticación.</p></main></div>
-<script src="app.js"></script>
-</body>
-</html>
+<script><script src="app.js"></script></body></html>
